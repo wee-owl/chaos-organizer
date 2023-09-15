@@ -1,0 +1,5 @@
+<svg width="370" height="370" viewBox="0 0 370 370" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M365 185C365 85.625 284.375 5 185 5C85.625 5 5 85.625 5 185C5 284.375 85.625 365 185 365C284.375 365 365 284.375 365 185Z" fill="#31C178" stroke="#31C178" stroke-width="10" stroke-miterlimit="10"/>
+<path d="M185 55L185 315" stroke="#F1F0F0" stroke-width="25" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M55 185L315 185" stroke="#F1F0F0" stroke-width="25" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

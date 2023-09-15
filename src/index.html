@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="img/favicon.png" type="image/png">
+  <title>ChaosOrganizer</title>
+</head>
+<body class="app">
+  <header class="app__header header">
+    <div class="header__logo logo">
+      <div class="logo__img"></div>
+      <h1 class="logo__title">Chaos Organizer</h1>
+      <div class="header__options options">
+        <button class="options__button button-search" type="button" name="button" aria-label="Click to search">
+        </button>
+        <button class="options__button button-location" type="button" name="button" aria-label="Click to determine geolocation">
+          <span class="location__city"></span>
+        </button>
+        <button class="options__button button-sidebar" type="button" name="button" aria-label="Click to open side menu">
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="app__container">
+    <main class="message__container">
+      <div class="message__pinned">
+        <div class="message__pinned-container">
+          <div class="pinned__pre"></div>
+          <p class="pinned__title">Закрепленное сообщение</p>
+          <p class="pinned__content">content</p>
+        </div>
+        <button class="message__pinned-delete" type="button" name="button" aria-label="Click to delete the pinned message"></button>
+      </div>
+      <div class="message__wrapper">
+      </div>
+      <div class="message__control">
+        <div class="message__control-wrapper">
+          <div class="message__emoji-wrapper"></div>
+          <button class="message__control-button button-emoji" type="button" name="button" aria-label="Click to select emoji">
+          </button>
+          <form class="message__form" action="#0" method="post" name="form">
+            <div class="message__form-textarea" contenteditable="true" data-placeholder="Введите текст"></div>
+          </form>
+          <button class="message__control-button button-send" type="button" name="button" aria-label="Click to send message"></button>
+          <button class="message__control-button button-microphone" type="button" name="button" aria-label="Click to record a voice message"></button>
+          <button class="message__control-button button-add" type="button" name="button" aria-label="Click to attach file"></button>
+        </div>
+      </div>
+      <div class="message__overlay">
+        <p class="message__overlay-text">Перетащите файлы сюда</p>
+        <p class="message__overlay-text">или</p>
+        <div class="message__overlay-button">
+          <input class="button__input" type="file">
+          <span class="button__input-overlap">Выберите файлы</span>
+        </div>
+        <button class="message__cancel-button" type="button" name="button" aria-label="Click to cancel">Отмена</button>
+      </div>
+    </main>
+    <aside class="sidebar__container">
+      <div class="sidebar__wrapper">
+        <button class="sidebar__button button-picture" data-id="image" type="button" name="button" aria-label="Click to select images">
+          <span class="sidebar__button-icon button-icon-picture"></span>
+          <span class="sidebar__button-text">изображения</span>
+        </button>
+        <button class="sidebar__button button-audio" data-id="audio" type="button" name="button" aria-label="Click to select audio">
+          <span class="sidebar__button-icon button-icon-audio"></span>
+          <span class="sidebar__button-text">аудио</span>
+        </button>
+        <button class="sidebar__button button-videofile" data-id="video" type="button" name="button" aria-label="Click to to select video">
+          <span class="sidebar__button-icon button-icon-video"></span>
+          <span class="sidebar__button-text">видео</span>
+        </button>
+        <button class="sidebar__button button-link" data-id="link" type="button" name="button" aria-label="Click to to select links">
+          <span class="sidebar__button-icon button-icon-link"></span>
+          <span class="sidebar__button-text">ссылки</span>
+        </button>
+        <button class="sidebar__button button-file" data-id="file" type="button" name="button" aria-label="Click to to select files">
+          <span class="sidebar__button-icon button-icon-file"></span>
+          <span class="sidebar__button-text">документы</span>
+        </button>
+      </div>
+      <footer class="sidebar__footer">
+        <p class="sidebar__footer-text">created by Wee-Owl</p>
+        <a class="sidebar__footer-link link-github" href="https://github.com/wee-owl/" target="_blank"></a>
+        <a class="sidebar__footer-link link-telegram" href="https://t.me/emkorobova" target="_blank"></a>
+        <a class="sidebar__footer-link link-mail" href="mailto:kem-cv@yandex.ru" target="_blank"></a>
+      </footer>
+    </aside>
+  </div>
+</body>
+</html>
