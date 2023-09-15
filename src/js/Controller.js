@@ -24,7 +24,6 @@ export default class Controller {
   init() {
     this.preload();
     this.viewList();
-    this.getPin();
     this.sidebarView();
     this.sidebarControl();
     this.messageFormControl();
@@ -93,6 +92,7 @@ export default class Controller {
           return messageView.init();
         });
       });
+    setTimeout(() => this.getPin(), 500);
   }
 
   getPin() {
