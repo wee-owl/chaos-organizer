@@ -91,8 +91,8 @@ export default class Controller {
           const messageView = new MessageView(this.messageWrapper, item, item.time);
           return messageView.init();
         });
+        this.getPin();
       });
-    setTimeout(() => this.getPin(), 500);
   }
 
   getPin() {
