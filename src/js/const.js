@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/'; /* http://localhost:3000/ ,  https://round-lapis-literature.glitch.me/ */
+const API_URL = 'https://round-lapis-literature.glitch.me/'; /* http://localhost:3000/ ,  https://round-lapis-literature.glitch.me/ */
 
 const GEO_API_KEY = '6de151936af556d3e75e4a20dab49ddae3d1192f';
 
