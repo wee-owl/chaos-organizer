@@ -1,4 +1,4 @@
-import { API_URL, FIRST_MESSAGE } from './const';
+import { API_URL, VIEW_MESS_COUNT, FIRST_MESSAGE } from './const';
 import ServerRequests from './ServerRequests';
 import Geolocation from './Geolocation';
 import MessageForm from './MessageForm';
@@ -87,12 +87,60 @@ export default class Controller {
         }
         this.preload.classList.remove('message__preload-active');
         this.messageControl.style.pointerEvents = '';
-        value.map((item) => {
-          const messageView = new MessageView(this.messageWrapper, item, item.time);
-          return messageView.init();
-        });
+        this.lazyLoad(value);
         this.getPin();
       });
+  }
+
+  lazyLoad(value) {
+    value.map((item) => {
+      const messageView = new MessageView(this.messageWrapper, item, item.time);
+      return messageView.init();
+    });
+
+    const mess = [...this.messageWrapper.children];
+    mess.forEach((el) => {
+      const elem = el;
+      elem.style.display = 'none';
+    });
+
+    const viewMess = (count) => {
+      let arr = mess.filter((el) => el.style.display === 'none');
+      if (arr.length >= count) {
+        for (let i = arr.length - count; i < arr.length; i += 1) {
+          arr[i].style.display = '';
+          arr[i].scrollIntoView({ behavior: 'instant', block: 'start' });
+        }
+      } else {
+        for (let i = 0; i < arr.length; i += 1) {
+          arr.forEach((el) => {
+            const elem = el;
+            elem.style.display = '';
+            elem.scrollIntoView({ behavior: 'instant', block: 'start' });
+          });
+        }
+      }
+      arr = [];
+    };
+
+    const load = (container) => {
+      const parentHeight = container.parentElement.clientHeight;
+      viewMess(VIEW_MESS_COUNT);
+      if (container.clientHeight < (parentHeight - container.nextElementSibling.clientHeight)) {
+        viewMess(Math.trunc(VIEW_MESS_COUNT / 2));
+      }
+
+      container.addEventListener('scroll', () => {
+        let topMess = mess.filter((el) => el.style.display !== 'none')[0];
+        if (topMess.getBoundingClientRect().top > 0) {
+          viewMess(VIEW_MESS_COUNT);
+          // eslint-disable-next-line prefer-destructuring
+          topMess = mess.filter((el) => el.style.display !== 'none')[0];
+        }
+      });
+    };
+
+    load(this.messageWrapper);
   }
 
   getPin() {

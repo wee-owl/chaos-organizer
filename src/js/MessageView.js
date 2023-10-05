@@ -53,7 +53,7 @@ export default class MessageView {
     } else {
       this.messageCloud.querySelector('.message').innerText = this.obj.text;
     }
-    setTimeout(() => this.scrollBottom(), 500);
+    setTimeout(() => this.scrollBottom(), 300);
     this.pinnedMessage();
     this.deleteMessage();
   }

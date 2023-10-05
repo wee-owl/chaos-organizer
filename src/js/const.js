@@ -1,8 +1,10 @@
-const API_URL = 'https://round-lapis-literature.glitch.me/'; /* http://localhost:3000/ ,  https://round-lapis-literature.glitch.me/ */
+const API_URL = 'http://localhost:3000/'; /* http://localhost:3000/ ,  https://round-lapis-literature.glitch.me/ */
 
 const GEO_API_KEY = '6de151936af556d3e75e4a20dab49ddae3d1192f';
 
 const FILE_SIZE_LIMIT = 20;
+
+const VIEW_MESS_COUNT = 10;
 
 const FILE_ICON = `
   <svg width="30" height="30" viewBox="0 0 320 350" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,5 +35,6 @@ const EMOJI = [
 const BOT_COMMAND = ['@chaos', 'погода', 'цитата', 'факт', 'фильм', 'юмор'];
 
 export {
-  API_URL, GEO_API_KEY, FILE_SIZE_LIMIT, FILE_ICON, FIRST_MESSAGE, EMOJI, BOT_COMMAND,
+  API_URL, GEO_API_KEY, FILE_SIZE_LIMIT, VIEW_MESS_COUNT,
+  FILE_ICON, FIRST_MESSAGE, EMOJI, BOT_COMMAND,
 };
